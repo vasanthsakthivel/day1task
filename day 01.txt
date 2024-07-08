@@ -1,0 +1,40 @@
+Write a blog on Difference between HTTP1.1 vs HTTP2
+HTTP1.1
+It load resources in sequential manner, if one resources fails to load, it didn't block others.
+image asserts keeps loading for longer time one after another to complete full image.
+it compress data by itself.
+it is in text based format.
+it could handle only one request at a time, as result subsequent request had to wait for the previous request to complete.
+it uses request resource inlining for use getting multiple pages.
+http 2
+it can send multiple streams of data simultaneously over a single TCP connections.
+once the first few asserts starts loading, the following assets are loaded very quickly.
+it use hpack for data compression that eliminates redundant information in HTTP header packets.
+it use binary protocol making better at parsing and processing data.
+using multiplexing, it effectively request the assest together and then receive them in the same way, all on the same connection.
+it uses PUSH frame by server that collects all multiple pages.
+
+Write a blog about objects and its internal representation in Javascript
+objects:
+objects are the collection of key: value pair
+it is not restricted to data types, you can store all types of data types
+compared to array, accessing the objects is quite easier
+syntax of object:
+var object name= {name: "guvi"}
+where name is the key and guvi is tha value,
+example:
+var obj = {
+    name: "guvi",
+    age: 23,
+    attendance=["mon","tue"]
+}
+to access the object we need tha key name, there are two method to access objects, 
+dot method syntax: object name.key name
+example: console.log(obj.name);
+        console.log(obj.age);
+        console.log(obj.attendance[0]);
+box method syntax: object name["keyname"]
+this mathod is used for in loop
+syntax for (var i in obj){
+console.log(obj[i]);
+}
